@@ -26,7 +26,7 @@ variable "subnet_one_cidr" {
 }
 
 variable "subnet_two_cidr" {
-    type = string
+    type = list(string)
     default = ["10.0.2.0/24" , "10.0.3.0/24"]
 }
 
@@ -36,12 +36,12 @@ variable "route_table_cidr" {
 }
 
 variable "web_ports" {
-    type = string
+    type = list(string)
     default = ["22" , "443" , "80" , "3306"]
 }
 
 variable "db_ports" {
-    type = string
+    type = list(string)
     default = ["22" , "3306"]
 }
 
