@@ -2,12 +2,12 @@
 
 variable "access_key" {
     type = string
-    default = "AKIAUYAC7DWPLRKIJ4WO"
+    default = "deleted while pushing to Github"
 }
 
 variable "secret_key" {
     type = string
-    default = "zoIJcP2C145v0WXpUwJLJd8qyA6ofJR3TwIiu1Hg"
+    default = "deleted while pushing to Github"
 }
 
 variable "region" {
@@ -45,9 +45,15 @@ variable "db_ports" {
     default = ["22" , "3306"]
 }
 
+variable "host" {
+default = "aws_instance.my_web_instance.public_dns"
+}
+
 variable "images" {
-    type = "map"
+    type = map
     default = {
         "us-east-1" = "ami-0d5eff06f840b45e9"
     }
 }
+
+

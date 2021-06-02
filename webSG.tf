@@ -26,5 +26,5 @@ resource "aws_security_group_rule" "web_egress" {
   cidr_blocks = ["0.0.0.0/0"]
   from_port = "${element(var.web_ports, count.index)}"
   to_port = "${element(var.web_ports, count.index)}"
-  security_group_id = "${aws_security_group.web_security_group}"
+  security_group_id = "${aws_security_group.web_security_group.id}"
 }
