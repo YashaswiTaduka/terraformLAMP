@@ -1,13 +1,7 @@
 #Declaring the required variables
 
-variable "access_key" {
-    type = string
-    default = "deleted while pushing to Github"
-}
-
-variable "secret_key" {
-    type = string
-    default = "deleted while pushing to Github"
+variable "profile" {
+    description = "AWS credentials profile you want to use"
 }
 
 variable "region" {

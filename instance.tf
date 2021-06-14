@@ -20,19 +20,19 @@ resource "aws_instance" "my_web_instance" {
   inline = [
       "sudo yum update -y",
       "sudo yum install -y httpd",
-      "service httpd start",
-      "sudo usermod -a -G apache ubuntu",
-      "sudo chown -R ubuntu:apache /var/www",
+      "sudo service httpd start",
+      "sudo usermod -a -G apache ec2-user",
+      "sudo chown -R ec2-user:apache /var/www",
       "sudo yum install -y mysql php php-mysql"
   ]
   }
 
 connection {
     type = "ssh"
-    user = "ubuntu"
+    user = "ec2-user"
     password = ""
-    host = "${var.host}"
-    private_key = "NVKeypair.pem"    
+    host = self.public_ip
+    private_key = file("NVKeypair.pem")    
 
 }
 
